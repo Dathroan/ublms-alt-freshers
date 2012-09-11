@@ -4,12 +4,38 @@
    Author's custom styles
    ========================================================================== */
 
+@media (max-width: 767px) {
+  body {
+      padding: 0;
+  }
 
+  .container {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+}
+   
+.row-gap {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.row-gap {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
+.bg1{background-color:#3399CC}
 
+.bg2{background-color:#854FAC}
 
+.bg31{background-color:#ebb30e}
+.bg32{background-color:#eba10e}
+.bg33{background-color:#b8b511}
+.bg34{background-color:#9BD916}
 
+.bg4{background-color:#c7bfaf}
 
+.bg5{background-color:#000000}
 
 
 
