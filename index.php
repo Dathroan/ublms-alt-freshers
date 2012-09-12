@@ -27,7 +27,13 @@
     
     <script src="<?php bloginfo('template_url'); ?>/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
-<body class="bg1" id="altfreshers">
+<?php 
+$events_ID = 11;
+$page_title = 'Jumbotron';
+$jumbotron_data = get_page_by_title( $page_title );
+$jumbotron_ID =  $jumbotron_data->ID;
+?>
+<body style="background-color: <?php the_field('background_colour', $jumbotron_ID); ?>" id="altfreshers">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -37,12 +43,6 @@ $other_page = 12;
  
 ?>
 <p><?php the_field('field_name', $other_page); ?>
-
-<?php 
-$page_title = 'Jumbotron';
-$jumbotron_data = get_page_by_title( $page_title );
-$jumbotron_ID =  $jumbotron_data->ID;
-?>
 
 <div style="background-color: <?php the_field('background_colour', $jumbotron_ID); ?>">
 
@@ -65,7 +65,7 @@ $jumbotron_ID =  $jumbotron_data->ID;
                 </a>
                 <ul class="dropdown-menu">
                 <?php 
-                  query_posts(array('post_parent' => 'Events', 'post_type' => 'page')); 
+                  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
                   while (have_posts()) { the_post(); 
                 ?>
                 <li><a href="#<?php the_title();?>" class="scroll"><?php the_field('title'); ?></a></li>
@@ -89,13 +89,12 @@ $jumbotron_ID =  $jumbotron_data->ID;
 
   
 <div id="slider" class="slider-horizontal hidden-phone">
-<div class="item item-1"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-2"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-3"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-4"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-5"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-6"><img src="http://placehold.it/200x300" /></div>
-<div class="item item-7"><img src="http://placehold.it/200x300" /></div>
+<?php 
+  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
+  while (have_posts()) { the_post(); 
+?>
+<div class="item item-<?php the_ID(); ?>"><img src="<?php the_field('flyer'); ?>" /></div>
+<?php } ?>
 </div>
 
 </div>
@@ -139,7 +138,7 @@ while (have_posts()) { the_post(); ?>
 </div>
 
 <?php 
-query_posts(array('post_parent' => 11, 'post_type' => 'page')); 
+query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
 
 while (have_posts()) { the_post(); ?>
 
@@ -147,13 +146,19 @@ while (have_posts()) { the_post(); ?>
 <div style="background-color: <?php the_field('background_colour'); ?>">
   <div class="container">
     <div class="row row-gap" id="<?php the_title();?>">
+      <div class="span6">
+      <h2><?php the_field('title'); ?></h2>
+      </div>
+      <div class="span3">
+      <h3><?php the_field('date'); ?> </h3>
+      </div>
+      <div class="span3">
+      <h3><?php the_field('venue'); ?></h3>
+      </div>
       <div class="span4">
         <img src="<?php the_field('flyer'); ?>" /> 
       </div>
       <div class="span8">
-        <?php the_title(); ?>
-        <h2><?php the_field('title'); ?></h2>
-        <h3><?php the_field('date'); ?> <?php the_field('venue'); ?></h3>
         <p>
         <?php the_field('description'); ?>
         </p>
@@ -168,11 +173,17 @@ while (have_posts()) { the_post(); ?>
 
 <?php } ?>
 
-<div class="bg4">
+<?php 
+$page_title = 'Contact';
+$contact_data = get_page_by_title( $page_title );
+$contact_ID =  $contact_data->ID;
+?>
+
+<div  style="background-color: <?php the_field('background_colour', $contact_ID); ?>">
   <div class="container" id="contact">
     <div class="row row-gap" id="event21">
       <div class="span12">
-      <h2>Get involved, contact us if your an aspiring band or ###### placeholder text</h2>
+      <h2><?php the_field('heading', $contact_ID); ?></h2>
       </div>
       <div class="span6">
         <form class="form-horizontal">
@@ -213,12 +224,9 @@ while (have_posts()) { the_post(); ?>
         </form>
       </div>
       <div class="span6">
-        <h3>Sponsors!</h3>
-        <p>Are there any?</p>
-        <h3>Social Media</h3>
-        <p>Facebook</p>
-        <h3>Something else?</h3>
-        <p>Is there anything else?</p>
+      <?php   
+      echo apply_filters('the_content', $contact_data->post_content);
+      ?>
       </div>
     </div> 
   </div>
