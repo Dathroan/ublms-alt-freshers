@@ -17,5 +17,5 @@ $(function() {
 
 
 $(document).ready(function($) {
-    $("#slider").FlowSlider();
+    $("#slider").FlowSlider({marginStart: 20, marginEnd: 20});
 });

@@ -30,16 +30,25 @@
   color: white !important;
 }
 
-.slider-horizontal {width:100%; margin:0px auto; height:340px;}
+.slider-horizontal {width: auto; margin:0px 80px; height:340px;}
 .slider-horizontal .item {height:300px; width:200px; margin:0px 10px;}
 
 .row-gap {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-.row-gap {
+
+.row-halfgap {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.row-firstgap {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+.row-lastgap {
+  padding-top: 15px;
+  padding-bottom: 40px;
 }
 
 .bg1{background-color:#4D4D4D}

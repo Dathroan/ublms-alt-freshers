@@ -26,13 +26,13 @@
 @red:                   #9d261d;
 @yellow:                #ffc40d;
 @orange:                #f89406;
-@pink:                  #c3325f;
+@pink:                  #E90089;
 @purple:                #7a43b6;
 
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        @black;
 @textColor:             @grayDark;
 
 
@@ -101,6 +101,7 @@
 
 // Dropdowns
 // -------------------------
+@dropdownLineHeight:            30px;
 @dropdownBackground:            @white;
 @dropdownBorder:                rgba(0,0,0,.2);
 @dropdownDividerTop:            #e5e5e5;
@@ -110,7 +111,7 @@
 @dropdownLinkColorHover:        @white;
 @dropdownLinkColorActive:       @dropdownLinkColor;
 
-@dropdownLinkBackgroundActive:  @linkColor;
+@dropdownLinkBackgroundActive:  @pink;
 @dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
 
 
@@ -160,15 +161,15 @@
 // -------------------------
 @navbarCollapseWidth:             979px;
 
-@navbarHeight:                    40px;
-@navbarBackgroundHighlight:       #E90089;
+@navbarHeight:                    60px;
+@navbarBackgroundHighlight:       @pink;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
 
 @navbarText:                      #fff;
 @navbarLinkColor:                 #fff;
-@navbarLinkColorHover:            @gray;
-@navbarLinkColorActive:           @gray;
+@navbarLinkColorHover:            @grayLighter;
+@navbarLinkColorActive:           @grayLighter;
 @navbarLinkBackgroundHover:       transparent;
 @navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
 
