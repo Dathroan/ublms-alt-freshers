@@ -14,3 +14,8 @@ $(function() {
         event.preventDefault();
     });
 });
+
+
+$(document).ready(function($) {
+    $("#slider").FlowSlider();
+});

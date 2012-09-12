@@ -10,11 +10,29 @@
   }
 
   .container {
-      padding-left: 20px;
-      padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
-   
+
+
+.cracked
+{
+  font-family:'chouse',Sans-Serif;
+}
+
+.cracked-main {
+  font-size: 140px !important;
+}
+
+.cracked-menu {
+  font-size: 80px !important;
+  color: white !important;
+}
+
+.slider-horizontal {width:100%; margin:0px auto; height:340px;}
+.slider-horizontal .item {height:300px; width:200px; margin:0px 10px;}
+
 .row-gap {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -24,7 +42,7 @@
   padding-bottom: 15px;
 }
 
-.bg1{background-color:#3399CC}
+.bg1{background-color:#4D4D4D}
 
 .bg2{background-color:#854FAC}
 
