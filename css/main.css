@@ -30,6 +30,10 @@
   color: white !important;
 }
 
+.cracked-event {
+  font-size:60px !important;
+}
+
 .slider-horizontal {width: auto; margin:0px 80px; height:340px;}
 .slider-horizontal .item {height:300px; width:200px; margin:0px 10px;}
 

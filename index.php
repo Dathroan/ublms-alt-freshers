@@ -65,7 +65,7 @@ $other_page = 12;
                 </a>
                 <ul class="dropdown-menu">
                 <?php 
-                  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
+                  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page','orderby'=>menu_order, 'order' => 'ASC')); 
                   while (have_posts()) { the_post(); 
                 ?>
                 <li><a href="#<?php the_title();?>" class="scroll"><?php the_field('title'); ?></a></li>
@@ -90,7 +90,7 @@ $other_page = 12;
   
 <div id="slider" class="slider-horizontal hidden-phone">
 <?php 
-  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
+  query_posts(array('post_parent' => $events_ID, 'post_type' => 'page','orderby'=>menu_order, 'order' => 'ASC')); 
   while (have_posts()) { the_post(); 
 ?>
 <div class="item item-<?php the_ID(); ?>"><img src="<?php the_field('flyer'); ?>" /></div>
@@ -116,7 +116,7 @@ $welcome_ID =  $welcome_data->ID;
     </div>
     
     <?php 
-query_posts(array('post_parent' => 8, 'post_type' => 'page')); 
+query_posts(array('post_parent' => 8, 'post_type' => 'page','orderby'=>menu_order, 'order' => 'ASC')); 
 
 while (have_posts()) { the_post(); ?>
 
@@ -138,7 +138,7 @@ while (have_posts()) { the_post(); ?>
 </div>
 
 <?php 
-query_posts(array('post_parent' => $events_ID, 'post_type' => 'page')); 
+query_posts(array('post_parent' => $events_ID, 'post_type' => 'page','orderby'=>menu_order, 'order' => 'ASC')); 
 
 while (have_posts()) { the_post(); ?>
 
@@ -146,14 +146,11 @@ while (have_posts()) { the_post(); ?>
 <div style="background-color: <?php the_field('background_colour'); ?>">
   <div class="container">
     <div class="row row-gap" id="<?php the_title();?>">
+      <div class="span4">
+      <h2 class="cracked cracked-event"><?php the_field('title'); ?></h2>
+      </div>
       <div class="span6">
-      <h2><?php the_field('title'); ?></h2>
-      </div>
-      <div class="span3">
-      <h3><?php the_field('date'); ?> </h3>
-      </div>
-      <div class="span3">
-      <h3><?php the_field('venue'); ?></h3>
+      <h3><?php the_field('date'); ?> @ <?php the_field('venue'); ?></h3>
       </div>
       <div class="span4">
         <img src="<?php the_field('flyer'); ?>" /> 
