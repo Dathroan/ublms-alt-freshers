@@ -521,7 +521,7 @@ h1 {
   font-family: 'chouse', Sans-Serif;
   font-weight: 400;
   line-height: 1;
-  color: inherit;
+  color: #ffffff;
   text-rendering: optimizelegibility;
 }
 h1 small {
@@ -538,7 +538,7 @@ h6 {
   font-family: 'Bree Serif', Georgia, Times, serif;
   font-weight: 400;
   line-height: 1;
-  color: inherit;
+  color: #ffffff;
   text-rendering: optimizelegibility;
 }
 h2 small,
@@ -4861,23 +4861,26 @@ a.badge:hover {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  background-color: #eeeeee;
+  background-color: rgba(0, 0, 0, 0.6);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
-.hero-unit h1 {
+.hero-unit h1,
+.hero-unit h2,
+.hero-unit h3,
+.hero-unit h4,
+.hero-unit h5 {
   margin-bottom: 0;
-  font-size: 60px;
   line-height: 1;
-  color: inherit;
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: -1px;
 }
 .hero-unit p {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  color: inherit;
+  color: rgba(255, 255, 255, 0.9);
 }
 .pull-right {
   float: right;
