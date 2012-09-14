@@ -93,7 +93,7 @@ $other_page = 12;
   query_posts(array('post_parent' => $events_ID, 'post_type' => 'page','orderby'=>menu_order, 'order' => 'ASC')); 
   while (have_posts()) { the_post(); 
 ?>
-<div class="item item-<?php the_ID(); ?>"><img src="<?php the_field('flyer'); ?>" /></div>
+<div class="item item-<?php the_ID(); ?>"><a href="#<?php the_title();?>" class="scroll"><img src="<?php the_field('flyer'); ?>" /></a></div>
 <?php } ?>
 </div>
 
@@ -146,23 +146,21 @@ while (have_posts()) { the_post(); ?>
 <div style="background-color: <?php the_field('background_colour'); ?>">
   <div class="container">
     <div class="row row-gap" id="<?php the_title();?>">
-      <div class="span4">
-      <h2 class="cracked cracked-event"><?php the_field('title'); ?></h2>
-      </div>
       <div class="span6">
-      <h3><?php the_field('date'); ?> @ <?php the_field('venue'); ?></h3>
-      </div>
-      <div class="span4">
-        <img src="<?php the_field('flyer'); ?>" /> 
-      </div>
-      <div class="span8">
-        <p>
-        <?php the_field('description'); ?>
-        </p>
-        <h3>Tickets</h3>
+      <h2 class="cracked cracked-event"><?php the_field('title'); ?></h2>
+      <br />
+      <img src="<?php the_field('flyer'); ?>" />
+      <h3>Tickets</h3>
         <p>
         <?php the_field('tickets'); ?>
         </p>
+      </div>
+      <div class="span6">
+      <h3><?php the_field('date'); ?> </h3>
+      <h3>@ <?php the_field('venue'); ?></h3>
+      <p>
+        <?php the_field('description'); ?>
+      </p>
       </div>
     </div>
   </div>
@@ -183,7 +181,7 @@ $contact_ID =  $contact_data->ID;
       <h2><?php the_field('heading', $contact_ID); ?></h2>
       </div>
       <div class="span6">
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="mailto:info@altfreshers.co.uk">
         <h3>Email Us!</h3>
           <div class="control-group">
             <label class="control-label" for="inputName">Name</label>
@@ -215,14 +213,15 @@ $contact_ID =  $contact_data->ID;
           
           <div class="control-group">
             <div class="controls">
-              <button type="submit" class="btn">Sign in</button>
+              <button type="submit" class="btn">Send!</button>
             </div>
           </div>
         </form>
       </div>
       <div class="span6">
+      <?php get_sidebar(); ?>
       <?php   
-      echo apply_filters('the_content', $contact_data->post_content);
+      //echo apply_filters('the_content', $contact_data->post_content);
       ?>
       </div>
     </div> 
